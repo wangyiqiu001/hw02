@@ -1,0 +1,355 @@
+<html>
+
+<head>
+    <meta charset="utf-8"> 
+</head>
+
+<style>
+    table {
+        border: 1px solid #ccc;
+        width: 80%;
+        height: 50%;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0 auto;
+    }
+    
+
+    th {
+        background-color: rgb(0, 128, 90);
+        color: rgb(248, 247, 247);
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th:hover {
+        position: relative;
+        bottom: 1px;
+        right: 2px;
+        box-shadow: 9px 9px 50px 0px;
+    }
+
+    .diag-main {
+        font-weight: 900;
+    }
+
+    .diag-ack {
+        font-style: italic;
+    }
+    div{
+
+        color: rgb(158, 158, 158);
+        
+    }
+
+</style>
+
+<body>
+
+    <table>
+        <tr>
+            <th colspan="2">时间/日期</th>
+            <th>周一</th>
+            <th>周二</th>
+            <th>周三</th>
+            <th>周四</th>
+            <th>周五</th>
+            <th>周六</th>
+            <th>周日</th>
+        </tr>
+
+        <tr>
+            <th rowspan="2">上午</th>
+            <th>第一大节</th>
+            <th>web应用与开发
+                <div id="box1">
+                    <p>教师：吕成功</p>
+                    <p>上课时间：</p>
+                    <p>8:20--10:00</p>
+                    <p>1-15周，每周周一1-2节</p>
+                    <p>第一公共教学楼c411</p>
+                </div>
+            </th>
+            <th>大学英语四级
+                <div id="box2">
+                    <p>教师：张蔚</p>
+                    <p>上课时间：</p>
+                    <p>8:20--10:00</p>
+                    <p>1-17周，每周周二1-2节</p>
+                    <p>第一公共教学楼c221</p>
+                </div>
+            </th>
+            <th>管理信息系统
+                <div id="box3">
+                    <p>教师：刘烨</p>
+                    <p>上课时间：</p>
+                    <p>8:20--10:00</p>
+                    <p>1-15周，单周周三1-2节</p>
+                    <p>第一公共教学楼C105</p>
+                </div>
+            </th>
+            <th>运营管理/数据库原理及应用
+                <div id="box4">
+                    <p>教师：刘亮，邓华</p>
+                    <p>上课时间：</p>
+                    <p>8:20--10:00</p>
+                    <p>1-15周，单周周四1-2节</p>
+                    <p>第一公共教学楼C405</p>
+                    <p>数据库原理及应用：吴君</p>
+                    <p>上课时间：</p>
+                    <p>10:20--12:00</p>
+                    <p>1-15周，双周周四1-2节</p>
+                    <p>第一公共教学楼C405</p>
+                </div>
+            </th>
+            <th>大学英语四级
+                <div id="box5">
+                    <p>教师：张蔚</p>
+                    <p>上课时间（1）：</p>
+                    <p>8:20--10:00</p>
+                    <p>2-16周，双周周五1-2节</p>
+                    <p>第一公共教学楼C219</p>
+                    <p>上课时间（2）：</p>
+                    <p>8:20--10:00</p>
+                    <p>1-17周，单周周五1-2节</p>
+                    <p>外语学院楼 219</p>
+
+                </div>
+            </th>
+            <th> </th>
+            <th> </th>
+        </tr>
+
+        <tr>
+            <th>第二大节</th>
+            <th>毛泽东思想与中国特色社会主义理论体系概论
+                <div id="box6">
+                    <p>教师：顾红英</p>
+                    <p>上课时间：</p>
+                    <p>10:20--12:00</p>
+                    <p>1-16周，每周周一3-4节</p>
+                    <p>第一公共教学楼a120</p>
+                </div>
+            </th>
+            <th>管理科学基础
+                <div id="box7">
+                    <p>教师：赵方方</p>
+                    <p>上课时间：</p>
+                    <p>10:20--12:00</p>
+                    <p>3-17周，每周周二3-4节</p>
+                    <p>第一公共教学楼c411</p>
+                </div>
+
+            </th>
+            <th>毛泽东思想与中国特色社会主义理论体系概论
+                <div id="box8">
+                    <p>教师：顾红英</p>
+                    <p>上课时间：</p>
+                    <p>10:20--12:00</p>
+                    <p>1-16周，每周周三3-4节</p>
+                    <p>第一公共教学楼a120</p>
+                </div>
+            </th>
+            <th>管理科学基础
+                <div id="box9">
+                    <p>教师：赵方方</p>
+                    <p>上课时间：</p>
+                    <p>10:20--12:00</p>
+                    <p>3-17周，每周周四3-4节</p>
+                    <p>第一公共教学楼c411</p>
+                </div>
+            </th>
+            <th>运营管理
+                <div id="box10">
+                    <p>运营管理教师：刘亮，邓华</p>
+                    <p>上课时间：</p>
+                    <p>10:20--12:00</p>
+                    <p>1-15周，每周周五3-4节</p>
+                    <p>第一公共教学楼C405</p>
+
+                </div>
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <th colspan="9"></th>
+        </tr>
+
+        <tr>
+            <th rowspan="2">下午</th>
+            <th>第三大节</th>
+            <th>管理信息系统
+                <div id="box11">
+                    <p>教师：刘烨</p>
+                    <p>上课时间：</p>
+                    <p>14:00--15:40</p>
+                    <p>1-15周，每周周一5-6节</p>
+                    <p>第一公共教学楼C105</p>
+                </div>
+            </th>
+            <th> </th>
+            <th>会计学
+                <div id="box12">
+                    <p>教师：姜红</p>
+                    <p>上课时间：</p>
+                    <p>14:00--15:40</p>
+                    <p>1-17周，单周周三5-6节</p>
+                    <p>第一公共教学楼B101</p>
+                </div>
+            </th>
+            <th>体育
+                <div id="box13">
+                    <p>教师：未知</p>
+                    <p>上课时间：</p>
+                    <p>14:00--15:40</p>
+                    <p>1-17周，单每周周四5-6节</p>
+                    <p>暂无上课地点</p>
+                </div>
+            </th>
+            <th>毛泽东思想与中国特色社会主义理论体系概论
+                <div id="box14">
+                    <p>教师：顾红英</p>
+                    <p>上课时间：</p>
+                    <p>14:00--15:40</p>
+                    <p>1-16周，每周周五5-6节</p>
+                    <p>第一公共教学楼a120</p>
+                </div>
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <th>第四大节</th>
+            <th>电子商务
+                <div id="box15">
+                    <p>教师：张亮</p>
+                    <p>上课时间：</p>
+                    <p>16:00-17:40</p>
+                    <p>3-17周，每周周一7-8节</p>
+                    <p>第一公共教学楼B303</p>
+                    </div>
+            </th>
+            <th>数据库原理及应用
+                <div id="box16">
+                    <p>教师：吴君</p>
+                    <p>上课时间：</p>
+                    <p>16:00-17:40</p>
+                    <p>1-15周，每周周二7-8节</p>
+                    <p>第一公共教学楼C109</p>
+                    </div>
+            </th>
+            <th> </th>
+            <th>会计学
+                <div id="box17">
+                    <p>教师：姜红</p>
+                    <p>上课时间：</p>
+                    <p>16:00-17:40</p>
+                    <p>1-17周，每周周四7-8节</p>
+                    <p>第一公共教学楼B101</p>
+                </div>
+            </th>
+            <th> </th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th colspan="9"></th>
+        </tr>
+        <tr>
+            <th rowspan="1">晚上</th>
+            <th>第五大节</th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th></th>
+            <th></th>
+        </tr>
+
+
+    </table>
+    <script>
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+        var box4 = document.getElementById("box4");
+        var box5 = document.getElementById("box5");
+        var box6 = document.getElementById("box6");
+        var box7 = document.getElementById("box7");
+        var box8 = document.getElementById("box8");
+        var box9 = document.getElementById("box9");
+        var box10= document.getElementById("box10");
+        var box11= document.getElementById("box11");
+        var box12= document.getElementById("box12");
+        var box13= document.getElementById("box13");
+        var box14= document.getElementById("box14");
+        var box15= document.getElementById("box15");
+        var box16= document.getElementById("box16");
+        var box17= document.getElementById("box17");
+    
+
+    </script>
+    <script>
+
+
+        function show(box) {
+            var text = box.innerHTML;               //text是所有的文本
+            var newBox = document.createElement("div"); //截取要一开始先显示的一部分放入newBox里面
+            var btn = document.createElement("a");
+            newBox.innerHTML = text.substring(0, 20);
+            btn.innerHTML = text.length > 20 ? "详细信息" : "";
+            btn.href = "###";
+            btn.onclick = function () {
+                if (btn.innerHTML == "详细信息") {
+                    btn.innerHTML = "收起";
+                    newBox.innerHTML = text;
+                } else {
+                    btn.innerHTML = "详细信息";
+                    newBox.innerHTML = text.substring(0, 20);
+                }
+            }
+            box.innerHTML = "";
+            box.appendChild(newBox);
+            box.appendChild(btn);
+        }
+
+    </script>
+    <script>
+        show(box1);
+        show(box2);
+        show(box3);
+        show(box4);
+        show(box5);
+        show(box6);
+        show(box7);
+        show(box8);
+        show(box9);
+        show(box10);
+        show(box11);
+        show(box12);
+        show(box13);
+        show(box14);
+        show(box15);
+        show(box16);
+        show(box17);
+    </script>
+
+</body>
+
+</html> 
