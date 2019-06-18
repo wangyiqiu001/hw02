@@ -1,0 +1,208 @@
+<html>
+
+<head>
+    <style>
+        table {
+            border: 1px solid #ccc;
+            width: 90%;
+            height:80%;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 0 auto;
+        }
+
+        td {
+            background-color: rgb(0, 128, 90);
+            color: rgb(248, 247, 247);
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            text-align: center;
+
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+
+        .diag-main {
+            font-weight: 100;
+        }
+
+        .diag-back {
+            font-style: italic;
+        }
+
+        .cell {
+
+            width: 80%;
+            height: 50%;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .cell>.detail {
+            display: none;
+        }
+
+        .cell>.detail.open {
+            display: block;
+            position: absolute;
+            height: 25%;
+            width: 12%;
+            background-color: rgb(89, 59, 199);
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <table id="grid">
+
+    </table>
+
+    <script>
+        let i = -1;
+        let j = -1;
+        let x = 1;
+        let y = 1;
+        var arr1 =
+            [[0, 1, 2, 0, 1, 2, 7, 8],
+            [0, 1, 2, 0, 1, 2, 7, 8],
+            [0, 1, 2, 0, 1, 2, 7, 8],
+            [0, 1, 2, 0, 1, 2, 7, 8],
+            [0, 1, 2, 0, 1, 2, 7, 8],
+            [null, null, null,null, null,null, null, null],
+            [0, 1, 2, 0, 1, 2, 7, 8]];
+        var arr2 =
+            [[0, 1, 2, 0, 1, 2, 7, 8],
+            [0, 1, 2, 0, 1, 2, "没课就不要点了嘛", "没课就不要点了嘛"],
+            [0, 1, 2, 0, 1, 2, "没课就不要点了嘛", "没课就不要点了嘛"],
+            [0, 1, 2, 0, 1, 2, "没课就不要点了嘛", "没课就不要点了嘛"],
+            [0, 1, 2, 0, 1, 2, "没课就不要点了嘛", "没课就不要点了嘛"],
+            [0, null, 2, 0, 1, 2, "没课就不要点了嘛", "没课就不要点了嘛"],
+            [0, "没课就不要点了嘛", "没课就不要点了嘛", "没课就不要点了嘛", "没课就不要点了嘛", "没课就不要点了嘛", "没课就不要点了嘛", "没课就不要点了嘛"]];
+
+
+        arr1[0][0] = "课程表"; arr1[0][1] = "周一"; arr1[0][2] = "周二"; arr1[0][3] = "周三"; arr1[0][4] = "周四"; arr1[0][5] = "周五"; arr1[0][6] = "周六"; arr1[0][7] = "周日";
+        arr1[1][0] = "第一大节"; arr1[2][0] = "第二大节"; arr1[3][0] = "第三大节"; arr1[4][0] = "第四大节"; arr1[5][0] = "第五大节"; arr1[6][0] = "第五大节";
+        arr1[1][1] = "web应用与开发"; arr1[1][2] = "大学英语四级"; arr1[1][3] = "管理信息系统"; arr1[1][4] = "运营管理/数据库原理及应用"; arr1[1][5] = "大学英语四级"; arr1[1][6] = "  "; arr1[1][7] = "  ";
+        arr1[2][1] = "毛泽东思想与中国特色社会主义理论体系概论"; arr1[2][2] = "管理科学基础"; arr1[2][3] = "毛泽东思想与中国特色社会主义理论体系概论"; arr1[2][4] = "管理科学基础"; arr1[2][5] = "运营管理"; arr1[2][6] = "  "; arr1[2][7] = "  ";
+        arr1[3][1] = "管理信息系统"; arr1[3][2] = "   "; arr1[3][3] = "会计学"; arr1[3][4] = "体育"; arr1[3][5] = "毛泽东思想与中国特色社会主义理论体系概论"; arr1[3][6] = "  "; arr1[3][7] = "  ";
+        arr1[4][1] = "电子商务"; arr1[4][2] = "数据库原理及应用"; arr1[4][3] = "  "; arr1[4][4] = "会计学"; arr1[4][5] = "  "; arr1[4][6] = "  "; arr1[4][7] = "  ";
+        arr1[6][1] = "  "; arr1[6][2] = "  "; arr1[6][3] = "  "; arr1[6][4] = "  "; arr1[6][5] = "  "; arr1[6][6] = "  "; arr1[6][7] = "  ";
+
+        arr2[0][0] = "信息管理与信息系统17级<p>2019大二学期</p>"; arr2[0][1] = "周一"; arr2[0][2] = "周二"; arr2[0][3] = "周三"; arr2[0][4] = "周四"; arr2[0][5] = "周五"; arr2[0][6] = "周六"; arr2[0][7] = "周日";
+        arr2[1][0] = "上课时间：<p>8:20--10:00</p>"; arr2[2][0] = "上课时间：<p>10:20--12:00</p>"; arr2[3][0] = "上课时间：<p>14:00--15:40</p>";
+        arr2[4][0] = "上课时间：<p>16:00-17:40</p>"; arr2[5][0] = "上课时间：<p>18:30-20:10</p>"; arr2[6][0] = "上课时间：<p>20:30-22:10</p>";
+
+        arr2[1][1] = "<p>教师：吕成功</p><p>1-15周，每周周一1-2节</p> <p>第一公共教学楼c411</p>";
+        arr2[1][2] = "<p>教师：张蔚</p><p>1-17周，每周周二1-2节</p><p>第一公共教学楼c221</p>";
+        arr2[1][3] = "<p>教师：刘烨</p><p>1-15周，单周周三1-2节</p><p>第一公共教学楼C105</p>";
+        arr2[1][4] = "<p>运营管理教师：刘亮，邓华</p><p>1-15周，单周周四1-2节</p><p>第一公共教学楼C405</p><p>数据库原理及应用：吴君</p><p>1-15周，双周周四1-2节</p> <p>第一公共教学楼C405</p>";
+        arr2[1][5] = "<p>教师：张蔚</p> <p>2-16周，双周周五1-2节</p> <p>第一公共教学楼C219</p> <p>1-17周，单周周五1-2节</p> <p>外语学院楼 219</p>";
+        arr2[2][1] = "<p>教师：顾红英</p><p>1-16周，每周周一3-4节</p><p>第一公共教学楼a120</p>";
+        arr2[2][2] = "  <p>教师：赵方方</p><p>3-17周，每周周二3-4节</p><p>第一公共教学楼c411</p>";
+        arr2[2][3] = "<p>教师：顾红英</p><p><p>1-16周，每周周三3-4节</p> <p>第一公共教学楼a120</p>";
+        arr2[2][4] = "  <p>教师：赵方方</p><p>3-17周，每周周四3-4节</p><p>第一公共教学楼c411</p>";
+        arr2[2][5] = "<p>运营管理教师：刘亮，邓华</p> <p>1-15周，每周周五3-4节</p><p>第一公共教学楼C405</p>";
+        arr2[3][1] = "<p>教师：刘烨</p><p>1-15周，每周周一5-6节</p> <p>第一公共教学楼C105</p>";
+        arr2[3][2] = "没课就不要点了嘛";
+        arr2[3][3] = "<p>教师：姜红</p><p>1-17周，单周周三5-6节</p><p>第一公共教学楼B101</p>";
+        arr2[3][4] = "<p>教师：未知</p><p>1-17周，每周周四5-6节</p><p>暂无上课地点</p>";
+        arr2[3][5] = "  <p>教师：顾红英</p><p>1-16周，每周周五5-6节</p> <p>第一公共教学楼a120</p>";
+        arr2[4][1] = "<p>教师：张亮</p><p>3-17周，每周周一7-8节</p><p>第一公共教学楼B303</p>";
+        arr2[4][2] = " <p>教师：吴君</p><p>1-15周，每周周二7-8节</p> <p>第一公共教学楼C109</p>";
+        arr2[4][3] = "没课就不要点了嘛";
+        arr2[4][4] = "<p>教师：姜红</p><p>1-17周，每周周四7-8节</p> <p>第一公共教学楼B101</p>";
+        arr2[4][5] = "没课就不要点了嘛";
+        arr2[5][1] = "没课就不要点了嘛"; arr2[5][2] = "没课就不要点了嘛"; arr2[5][3] = "没课就不要点了嘛"; arr2[5][4] = "没课就不要点了嘛"; arr2[5][5] = "没课就不要点了嘛"; arr2[5][6] = "没课就不要点了嘛"; arr2[5][7] = "没课就不要点了嘛";
+
+
+
+        let f = function (event) {
+            console.log(i, j, i * 3 + j + 1);
+        }
+
+        let tblEl = document.getElementById('grid');
+
+        for (let i = 0; i < 7; i++) {
+            let trEl = document.createElement('tr');
+            for (let j = 0; j < 8; j++) {
+                let tdEl = document.createElement('td');
+                let divEl = document.createElement('div')
+                divEl.className = 'cell';
+
+                let detailDivEl = document.createElement('div');
+                detailDivEl.className = 'detail';
+                detailDivEl.innerHTML = arr2[i][j];
+
+                detailDivEl.onmouseout = function (event) {
+                    let names = detailDivEl.className.split(' ');
+                    names = names.filter((x) => x != 'open')
+                    detailDivEl.className = names.join(' ');
+
+                }
+
+
+                divEl.append(detailDivEl);
+
+                let briefDivEl = document.createElement('div');
+                briefDivEl.innerHTML = arr1[i][j];
+                divEl.append(briefDivEl);
+
+
+
+                tdEl.onclick = function (event) {
+                    let names = detailDivEl.className.split(' ');
+
+                    if (names.indexOf('open') >= 0) {
+                        names = names.filter((x) => x != 'open')
+                    } else {
+                        names.push('open');
+                    }
+
+                    console.log(names);
+
+                    detailDivEl.className = names.join(' ');
+
+
+                };
+
+
+                let classNames = [];
+                if (i == j)
+                    classNames.push('main-diag');
+
+                if (i + j == 2)
+                    classNames.push('back-diag');
+
+                tdEl.className = classNames.join(' ');
+
+                tdEl.append(divEl);
+                trEl.append(tdEl);
+            }
+            tblEl.append(trEl);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
